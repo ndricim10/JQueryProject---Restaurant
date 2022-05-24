@@ -17,7 +17,7 @@ function displayRestaurantPage(){
             </div>
         </div>
         <div class="col-sm-12 nav-class">
-            <nav>
+            <nav class="navbar-menu">
                 <ul>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#service">our service</a></li>
@@ -26,7 +26,9 @@ function displayRestaurantPage(){
                 </ul>
                 <a href="#bookTable"><button>Book a table</button></a>
             </nav>
-            <i class="fas fa-bars"></i>
+            <div class="menu-bar-logo">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </div>
 
@@ -571,3 +573,24 @@ function onScroll(event){
     });
 }
 onScroll()
+
+
+function navBarMenu(){
+    const menuBar = $('.fa-bars'),
+    navBarMenu = $('.navbar-menu')
+    $(document).ready(function(){
+        menuBar.click(function(){
+            if(menuBar.hasClass('fa-bars')){
+                navBarMenu.show(800)
+                menuBar.addClass('fa-times')
+                menuBar.removeClass('fa-bars')
+            }
+            else{
+                navBarMenu.hide(400)
+                menuBar.removeClass('fa-times')
+                menuBar.addClass('fa-bars')
+            }
+        })
+    })
+}
+navBarMenu()

@@ -208,36 +208,55 @@ nav ul li a:hover {
 }
 
 @media (max-width: 576px){
+    .fa-bars{
+        position: relative;
+    }
     nav, nav ul{
         all: unset;
         display: flex;
+        bottom: 0;
         flex-direction: column;
-        gap: 10px;
+        gap: 30px;
+        font-size: 1.5rem;
         padding-block: 10px;
     }
-    nav{
-        position: fixed;
-        top: calc(20vh + 10px);
+    .navbar-menu{
+        position: absolute;
         left: 0;
+        bottom: 0;
+        top: 10vh;
         height: 60vh;
         background-color: var(--dark);
-        width: 80%;
+        width: 100%;
         padding-inline: 1rem;
+        z-index: 999999999999;
         display: none;
+        opacity: .95;
+    }
+    nav ul li a{
+        font-size: 1rem;
     }
     .nav-class{
         display: flex;
         justify-content: space-between;
-        /* display: none; */
+        position: relative;
+        height: 10vh;
+    }
+    .menu-bar-logo{
+        display: flex;
+        align-items: center;
+    }
+    .menu-bar-logo i{
+        font-size: 1.2rem;
     }
     .nav-class i{
         display: unset;
         cursor: pointer;
+        /* position: relative; */
     }
     .working-images{
         display: flex;
         gap: 10px;
-        border: 1px red solid;
         justify-content: flex-start;
         margin: unset;
         padding: unset;
