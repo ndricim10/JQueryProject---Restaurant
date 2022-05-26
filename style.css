@@ -267,6 +267,7 @@ nav ul li a:hover {
         height: auto;
         /* display: none; */
     }
+    
 }
 
 
@@ -531,6 +532,8 @@ nav ul li a:hover {
     color: var(--white);
 }
 
+
+/* MAIN MENU */
 .main-menu {
     position: relative;
     display: flex;
@@ -596,6 +599,33 @@ nav ul li a:hover {
     .main-menu::before{
         height: 200vh;
     }
+}
+
+@media (max-width: 400px){
+  .main-menu{
+      height: 250vh;
+  }
+  .main-menu::before{
+      height: 250vh;
+  }
+}
+
+@media (max-width: 300px){
+  .main-menu{
+      height: 320vh;
+  }
+  .main-menu::before{
+      height: 320vh;
+  }
+}
+
+@media (max-width: 200px){
+  .main-menu{
+      height: 370vh;
+  }
+  .main-menu::before{
+      height: 370vh;
+  }
 }
 
 
@@ -991,7 +1021,11 @@ footer div .reserved{
     z-index: 999999;
 }
 
-
+@media(max-width: 576px){
+.order{
+  left: 30px;
+}
+}
 
 
 

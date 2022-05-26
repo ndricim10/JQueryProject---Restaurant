@@ -427,7 +427,6 @@ function scrollDown(){
     $(window).on('scroll', function(){
         let scrolled = window.scrollY;
         let display = logo.attr('data-margin')
-        console.log(display);
         if(display==='false'){
             logo.attr('data-margin', 'true')
             area.attr('data-margin-top', 'true')
@@ -465,6 +464,13 @@ function scrollUpDisplay(){
     });
 }
 // scrollUpDisplay()
+
+// yearDate.ejDateTimePicker({
+//     dateTimeFormat: "dddd, MMMM dd, yyyy hh:mm:ss tt",
+//     timePopupWidth: "150px",
+//     timeDisplayFormat: "hh:mm:ss tt",
+//     width: '300px'
+//  });
 
 function validationForm(){
     $(document).ready(function(){
@@ -509,17 +515,19 @@ function validationForm(){
                 $('.nameDate').html('')
                 $('.nameSeats').html('')
                 displayTable.attr('data-display', 'true')
-                textDisplayTable.html('Dear ' +nameInput.val() +', your table is booked at ' + yearDate.val() + ' ' + 'for ' + seats.val() + ' people. Thank you!')
+                textDisplayTable.html('Dear ' + nameInput.val() +', your table is booked at ' + yearDate.val() + ' ' + 'for ' + seats.val() + ' people. Thank you!')
                 nameInput.css('color: ""')
                 nameInput.val('')
                 phone.val('')
                 seats.val('')
                 yearDate.val('')
+                console.log(moment(nameInput.val()));
             }
         })
     })
 }
 validationForm()
+
 function orderTable(){
     $(document).ready(function(){
         removeTableOrdered.on('click', function(){
