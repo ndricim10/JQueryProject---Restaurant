@@ -109,11 +109,8 @@ function displayRestaurantPage() {
           textDisplayTable.html(
             "Dear " +
               nameInput.val() +
-              ", your table is booked at " +
+              ", your table is booked " +
               moment(`${yearDate.val()}`).calendar() +
-              " (" +
-              moment(`${yearDate.val()}`).endOf("day").fromNow() +
-              ")" +
               " " +
               "for " +
               seats.val() +
@@ -209,12 +206,15 @@ function displayRestaurantPage() {
           navBarMenu.show(800);
           menuBar.addClass("fa-times");
           menuBar.removeClass("fa-bars");
+          
         } else {
           navBarMenu.hide(400);
           menuBar.removeClass("fa-times");
           menuBar.addClass("fa-bars");
+          
         }
       });
+      
     });
   }
   navBarMenu();
