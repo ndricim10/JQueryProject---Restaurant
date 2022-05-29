@@ -61,6 +61,8 @@ body{
     font-size: 15px;
     font-family: var(--font-family-sans-serif);
     scroll-behavior: smooth;
+    max-width: 100%;
+    width: 100%;
 }
 
 ul li {
@@ -87,6 +89,8 @@ a button {
     cursor: pointer;
     text-transform: capitalize;
     border-radius: 5px;
+    max-width: 200px;
+    width: 100%;
 }
 
 button:hover,
@@ -158,11 +162,11 @@ header .logo-div[data-margin="true"] {
     opacity: .75;
 }
 
-@media(min-width: 576px){
+/* @media(min-width: 576px){
     .call-576, .third-div{
         display: none;
     }
-}
+} */
 
 header span {
     color: var(--light);
@@ -280,17 +284,11 @@ nav ul li a:hover {
         /* position: relative; */
     }
     .working-images{
-        display: flex;
-        gap: 10px;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         margin: unset;
         padding: unset;
         padding-inline: 0px;
-    }
-    .working-images img{
-        width: 10px;
-        height: auto;
-        /* display: none; */
     }
     
 }
@@ -307,6 +305,7 @@ nav ul li a:hover {
     justify-content: center;
     height: 100vh;
     /* width: 100vw; */
+    width: 100%;
     position: relative;
     z-index: 9;
 }
@@ -353,6 +352,9 @@ nav ul li a:hover {
     font-size: 4rem;
 }
 
+@media(max-width: 576px){
+    
+}
 
 
 
@@ -360,15 +362,34 @@ nav ul li a:hover {
 .working-times {
     margin-top: 100px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    row-gap: 80px;
-    column-gap: 15px;
+    row-gap: 30px;
+}
+
+.working-times .grids, .working-times .grids-2{
+    display: flex;
+    gap: 20px;
+    height: max-content;
+    padding-left: 1rem;
+}
+.working-times .grids div, .working-times .grids-2 div{
+    height: max-content;
+    width: 100%;
+}
+.working-images{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    height: max-content;
+    margin-top: 0px;
+    width: 100%;
 }
 
 .working-times .lorem {
-    display: block;
-    max-width: 75%;
+    display: flex;
+    justify-content: flex-end;
+    /* max-width: 75%; */
     color: var(--gray);
 }
 
@@ -394,46 +415,36 @@ nav ul li a:hover {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     gap: 10px;
     color: #b3b3b3;
     font-size: 1rem;
+    height: max-content;
+    /* border: 10px green solid; */
 }
 
 
 @media (max-width: 770px){
-    .working-times{
-        display: unset;
+    .working-times,.working-times .grids, .working-times .grids-2{
         display: flex;
         flex-direction: column;
-        height: max-content;
-        gap: 0px;
+        gap: 100px;
     }
-
-    .working-times div{
-        height: max-content;
-        display: unset;
-        width: 100%;
+    .working-times{
+        margin-block: 150px;
     }
-
-    .first-div{
-        width: 100%;
-        height: max-content;
+    .working-times .grids, .working-times .grids-2{
+        gap: 2px;
     }
     .working-images{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .first-div{
+        /* width: 100%; */
         height: max-content;
-        margin-top: 0px;
-        width: 100%;
-        margin-bottom: 100px;
-    }
-    .working-images img{
-        max-width: 218px;
-        max-height: 323px;
-        width: 100%;
-        height: auto;
-    }
-    .first-desc, .first-div, .working-images, .images-grid{
-        padding-inline: 4rem;
+        margin: unset;
+        gap: 0;
     }
     .first-desc{
         height: max-content;
@@ -964,9 +975,12 @@ footer div .reserved{
 /* FIXED ORDER */
 .click-order{
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: none;
-    
 }
 .order-relative[data-display="false"] {
     position: relative;
@@ -1004,7 +1018,7 @@ footer div .reserved{
     height: 40px;
     width: 40px;
     background-color: transparent;
-    opacity: .3;
+    opacity: 1;
     color: white;
     border-radius: 50%;
     font-size: 20px;
@@ -1018,19 +1032,25 @@ footer div .reserved{
 .order {
     opacity: .9;
     background: var(--primary);
-    left: 0;
-    top: 0;
-    height: 100vh;
+    left: 30vh;
+    top: 30vh;
+    height: 40vh;
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 50%;
     padding-bottom: 2rem;
     z-index: 999999;
 }
 
+@media(max-width: 770px){
+    .order{
+        left: 1px;
+        width: 100vw;
+    }
+}
 
 /* TICK ANIMATION */
 .wrapper {
